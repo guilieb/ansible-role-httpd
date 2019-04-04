@@ -1,0 +1,17 @@
+  - name: "Installing webserver"
+    yum: name="httpd,mod_ssl,mod_evasive,mod_security" state=present
+
+  - name: "Copying default configuration files"
+    copy:
+      src: "conf.d/{{ item }}"
+      dest: "/etc/httpd/conf.d/{{ item }}.conf"
+      owner: root
+      group: apache
+      mode: 0640
+    with_items:
+      - ssl_custom
+      - headers_custom
+      - server_custom
+
+  - name: "Reloading webserver"
+    service: name=httpd state=reloaded enabled=yes

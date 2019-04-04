@@ -1,0 +1,6 @@
+ServerTokens Prod
+ServerSignature Off
+
+<IfModule security2_module>
+    SecServerSignature " "
+</IfModule>
