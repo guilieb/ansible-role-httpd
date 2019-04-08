@@ -1,5 +1,5 @@
   - name: "Installing webserver"
-    yum: name="httpd,mod_ssl,mod_evasive,mod_security" state=present
+    yum: name="httpd,mod_ssl,mod_security" state=present
 
   - name: "Copying default configuration files"
     copy:
