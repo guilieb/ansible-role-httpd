@@ -4,15 +4,11 @@
 httpd_headers_xss_protection: "1; mode=block"
 httpd_headers_x_content_type_options: "nosniff"
 httpd_headers_referer_policy: "strict-origin"
-httpd_headers_csp: "default-src 'self'"
 httpd_headers_xframe_options: "SAMEORIGIN"
-httpd_headers_feature_policy: "geolocation 'none';midi 'none';sync-xhr 'none';microphone 'none';camera 'none';magnetometer 'none';gyroscope 'none';speaker 'none';fullscreen 'self';payment 'none';"
 httpd_headers_hsts: "max-age=15552001; includeSubDomains;"
 
 # mod_ssl
-httpd_ssl_protocol: "TLSv1.2"
 httpd_ssl_honor_cipher: "on"
-httpd_ssl_cipher_suite: "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 !EDH !EDH+aRSA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS !LOW !MEDIUM"
 
 # mod_security
 httpd_security_server_tokens: "Prod"
