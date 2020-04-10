@@ -1,0 +1,15 @@
+# {{ ansible_managed }}
+
+{% if httpd_security_server_tokens is defined %}
+    ServerTokens {{ httpd_security_server_tokens }}
+{% endif %}
+
+{% if httpd_security_signature is defined %}
+    ServerSignature {{ httpd_security_signature }}
+{% endif
+
+{% if httpd_security_secserver_signature is defined %}
+    <IfModule security2_module>
+        SecServerSignature " {{ httpd_security_secserver_signature }} "
+    </IfModule>
+{% endif %}

@@ -1,0 +1,33 @@
+# {{ ansible_managed }}
+
+<IfModule mod_headers.c>
+    {% if httpd_headers_xss_protection is defined %}
+        Header always set X-XSS-Protection "{{ httpd_headers_xss_protection }}"
+    {% endif %}
+
+    {% if httpd_headers_x_content_type_options is defined %}
+        Header always set X-Content-Type-Options "{{ httpd_headers_x_content_type_options }}"
+    {% endif %}
+
+    {% if httpd_headers_referer_policy is defined %}
+        Header always set Referrer-Policy "{{ httpd_headers_referer_policy }}"
+    {% endif %}
+
+    {% if httpd_headers_csp is defined %}
+        Header always set Content-Security-Policy "{{ httpd_headers_csp }}"
+    {% endif %}
+
+    {% if httpd_headers_xframe_options is defined %}
+        Header always set X-Frame-Options {{ httpd_headers_xframe_options }}
+    {% endif %}
+
+    {% if httpd_headers_feature_policy is defined %}
+        Header always set Feature-Policy "{{ httpd_headers_feature_policy }}"
+    {% endif %}
+
+    {% if httpd_headers_hsts is defined %}
+        <IfModule mod_ssl.c>
+            Header always set Strict-Transport-Security "{{ httpd_headers_hsts }}"
+        </IfModule>
+    {% endif %}
+</IfModule>

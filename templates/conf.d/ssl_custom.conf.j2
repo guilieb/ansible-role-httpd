@@ -1,0 +1,15 @@
+# {{ ansible_managed }}
+
+<IfModule mod_ssl.c>
+    {% if httpd_ssl_protocol is defined %}
+        SSLProtocol {{ httpd_ssl_protocol }}
+    {% endif %}
+
+    {% if httpd_ssl_honor_cipher is defined %}
+        SSLHonorCipherOrder {{ httpd_ssl_honor_cipher }}
+    {% endif %}
+
+    {% if httpd_ssl_cipher_suite is defined %}
+        SSLCipherSuite "{{ httpd_ssl_cipher_suite }}"
+    {% endif %}
+</IfModule>
