@@ -6,7 +6,7 @@
 
 {% if httpd_security_signature is defined %}
     ServerSignature {{ httpd_security_signature }}
-{% endif
+{% endif %}
 
 {% if httpd_security_secserver_signature is defined %}
     <IfModule security2_module>

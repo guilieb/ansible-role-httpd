@@ -4,7 +4,7 @@
   yum: name="httpd,mod_ssl,mod_security" state=present
 
 - name: "Copy hardening configuration files"
-  templates:
+  template:
     src: "{{ item }}.conf.j2"
     dest: "/etc/httpd/conf.d/{{ item }}.conf"
     owner: root
