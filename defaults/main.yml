@@ -1,3 +1,4 @@
+---
 
 # mod_headers
 httpd_headers_xss_protection: "1; mode=block"

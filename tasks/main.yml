@@ -1,17 +1,19 @@
-  - name: "Install HTTPd and security modules"
-    yum: name="httpd,mod_ssl,mod_security" state=present
+---
 
-  - name: "Copy hardening configuration files"
-    templates:
-      src: "{{ item }}.conf.j2"
-      dest: "/etc/httpd/conf.d/{{ item }}.conf"
-      owner: root
-      group: apache
-      mode: 0640
-    with_items:
-      - ssl_custom
-      - headers_custom
-      - server_custom
+- name: "Install HTTPd and security modules"
+  yum: name="httpd,mod_ssl,mod_security" state=present
 
-  - name: "Reload HTTPd"
-    service: name=httpd state=reloaded enabled=yes
+- name: "Copy hardening configuration files"
+  templates:
+    src: "{{ item }}.conf.j2"
+    dest: "/etc/httpd/conf.d/{{ item }}.conf"
+    owner: root
+    group: apache
+    mode: 0640
+  with_items:
+    - ssl_custom
+    - headers_custom
+    - server_custom
+
+- name: "Reload HTTPd"
+  service: name=httpd state=reloaded enabled=yes
