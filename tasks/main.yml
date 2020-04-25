@@ -14,6 +14,8 @@
     - ssl_custom
     - headers_custom
     - server_custom
+  notify:
+    - "restart httpd"
 
-- name: "Reload HTTPd"
-  service: name=httpd state=reloaded enabled=yes
+- name: "Enable HTTP daemon"
+  service: name=httpd enabled=yes
