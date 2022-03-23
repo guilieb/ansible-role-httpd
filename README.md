@@ -16,9 +16,11 @@ This [Ansible](https://www.ansible.com) role aims at installing the [Apache HTTP
 
 ### `mod_ssl`
 
- - `httpd_ssl_honor_cipher: "on"`: sets the [`SSLHonorCipherOrder`](https://httpd.apache.org/docs/current/fr/mod/mod_ssl.html#sslhonorcipherorder) option.
- - `httpd_ssl_protocol`: sets the [`SSLProtocol`](https://httpd.apache.org/docs/2.4/fr/mod/mod_ssl.html#sslprotocol) option. This is **undefined by default**.
- - `httpd_ssl_cipher_suite`: sets the [`SSLCipherSuite`](https://httpd.apache.org/docs/2.4/fr/mod/mod_ssl.html#sslciphersuite) option. This is **undefined by default**.
+ - `httpd_ssl_cipher_order: "on"`: sets the [`SSLHonorCipherOrder`](https://httpd.apache.org/docs/current/fr/mod/mod_ssl.html#sslhonorcipherorder) option.
+ - `httpd_ssl_protocol`: sets the [`SSLProtocol`](https://httpd.apache.org/docs/2.4/fr/mod/mod_ssl.html#sslprotocol) option.
+ - `httpd_ssl_cipher_suite`: sets the [`SSLCipherSuite`](https://httpd.apache.org/docs/2.4/fr/mod/mod_ssl.html#sslciphersuite) option.
+ - `httpd_ssl_compression: "off"`:  sets the [`SSLCompression`](https://httpd.apache.org/docs/trunk/fr/mod/mod_ssl.html#sslcompression) option.
+ - `httpd_ssl_session_tickets: "off"`: sets the [`SSLSessionTickets`](https://httpd.apache.org/docs/trunk/fr/mod/mod_ssl.html#sslsessiontickets) option.
 
  Please, refer to the [HTTPd document on TLS encryption](https://httpd.apache.org/docs/2.4/en/ssl/ssl_howto.html) and take a look at the [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/).
 

@@ -5,11 +5,20 @@
         SSLProtocol {{ httpd_ssl_protocol }}
     {% endif %}
 
-    {% if httpd_ssl_honor_cipher is defined %}
-        SSLHonorCipherOrder {{ httpd_ssl_honor_cipher }}
+    {% if httpd_ssl_cipher_order is defined %}
+        SSLHonorCipherOrder {{ httpd_ssl_cipher_order }}
+    {% endif %}
+    
+    {% if httpd_ssl_session_tickets is defined %}
+        SSLSessionTickets {{ httpd_ssl_session_tickets }}
+    {% endif %}
+    
+    {% if httpd_ssl_compression is defined %}
+        SSLCompression {{ httpd_ssl_compression }}
     {% endif %}
 
     {% if httpd_ssl_cipher_suite is defined %}
         SSLCipherSuite "{{ httpd_ssl_cipher_suite }}"
     {% endif %}
+
 </IfModule>
