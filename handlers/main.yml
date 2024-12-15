@@ -1,7 +1,6 @@
 ---
-
 - name: Restart HTTD daemon
-  service:
+  ansible.builtin.service:
     name: httpd
     state: restarted
-  listen: "restart httpd"
+  listen: restart httpd
